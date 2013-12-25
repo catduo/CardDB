@@ -3,4 +3,5 @@
     require_once("db.php");
 
     $db = new DB();
-    $db->connect($ip,$username,$password,"test");
+
+    $db->connect($ip,$username,$password,$dbname);
