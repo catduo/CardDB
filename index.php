@@ -5,14 +5,12 @@
     $db->connect($ip,$username,$password,"test");
 
     if (isset($_GET['reset'])) $db->resetDatabase(); //TODO make this more production oriented
-    
-    $users = $db->getUsers();
-    foreach ($users as $user) {
-        unset($user['passwordhash']);
-        echo "<pre>";
-        print_r($user);
-        echo "</pre>";
-        //echo "<div><b>$user[email]</b>: $user[created]</div>";
-    }
-echo $ip;
+    if (!isset($_POST['type'])){
+    $question = $db->getQuestion($_POST['type']);
+    echo "<question>";
+    echo $question[Question];
+    echo "</question>";
+    echo "<answer>";
+    echo $question[Answer];
+    echo "</answer>";
 ?>

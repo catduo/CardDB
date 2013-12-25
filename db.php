@@ -40,6 +40,13 @@
             return $data[0]['value'];
         }
 
+        public function getQuestion($type) {
+            $result = mysqli_query($this->conn,"SELECT * FROM questions WHERE Type = $type");
+            $data = mysqli_fetch_all($result,MYSQLI_ASSOC);
+            if (count($data) == 0) return null;
+            return $data[0];
+        }
+
         public function setProperty($user,$property,$value) {
             $existing = $this->getProperty($user,$property);
             if ($existing == null) {
