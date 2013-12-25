@@ -3,6 +3,6 @@
 "http://www.adobe.com/xml/dtds/cross-domain-policy.dtd">
 <cross-domain-policy>
 	<site-control permitted-cross-domain-policies="master-only"/>
-	<allow-access-from domain="*" to-ports="1-30000"/>
+	<allow-access-from domain="*"/>
 	<allow-http-request-headers-from domain="*" headers="*"/>
 </cross-domain-policy>
