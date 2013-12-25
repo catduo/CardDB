@@ -2,10 +2,10 @@
     require_once("connect.php");
     
     $db = new DB();
-    $db->connect($ip,$username,$password,"test");
+    $db->connect($ip,$username,$password,$dbname);
 
     if (isset($_GET['reset'])) $db->resetDatabase(); //TODO make this more production oriented
-    if (!isset($_POST['type'])){
+    if (isset($_POST['type'])){
         $question = $db->getQuestion('Geography');
         echo "<question>";
         echo $question['Question'];
@@ -13,5 +13,6 @@
         echo "<answer>";
         echo $question['Answer'];
         echo "</answer>";
+        return;
     }
 ?>
