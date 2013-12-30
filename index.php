@@ -6,11 +6,11 @@
 
     if (isset($_GET['reset'])) $db->resetDatabase(); //TODO make this more production oriented
     if (isset($_POST['category'])){
-        $question = $db->getQuestion('Geography');
+        $question = $db->getQuestion($_POST['category']);
         echo "<question>";
         echo $question['Question'];
         echo "</question>";
-        echo "<type>"
+        echo "<type>";
         echo $question['Type'];
         echo "</type>";
         echo "<answer>";
