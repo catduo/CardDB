@@ -41,7 +41,7 @@
         }
 
         public function getQuestion($type) {
-            $result = mysqli_query($this->conn,"SELECT * FROM questions WHERE Type = '$type'");
+            $result = mysqli_query($this->conn,"SELECT * FROM questions WHERE Type = '$type' LIMIT 1");
             $data = mysqli_fetch_all($result,MYSQLI_ASSOC) or die(mysql_error($result));
             if (count($data) == 0) return null;
             return $data[0];
