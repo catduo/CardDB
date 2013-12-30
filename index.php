@@ -12,10 +12,10 @@
         echo "</question>";
         echo "<type>";
         echo $question['Type'];
-        echo "</type>";
         echo "<answer>";
         echo $question['Answer'];
         echo "</answer>";
+        echo "</type>";
         return;
     }
 ?>
