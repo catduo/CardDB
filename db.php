@@ -47,6 +47,10 @@
             return $data[0];
         }
 
+        public function addQuestion($question,$answer,$type, $category) {
+            mysqli_query($this->conn,"INSERT INTO questions (NULL,'$question','$answer',0,0,'$type','$category'");
+        }
+
         public function setProperty($user,$property,$value) {
             $existing = $this->getProperty($user,$property);
             if ($existing == null) {
