@@ -48,7 +48,7 @@
         }
 
         public function addQuestion($question,$answer,$type, $category) {
-            mysqli_query($this->conn,"INSERT INTO questions VALUES (NULL,'$question','$answer',0,0,'$type','$category')");
+            mysqli_query($this->conn,"INSERT INTO questions VALUES (NULL,'$question','$answer',0,0,'$type','$category', FALSE)");
         }
 
         public function setProperty($user,$property,$value) {
