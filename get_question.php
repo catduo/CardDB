@@ -6,7 +6,7 @@
 
     if (isset($_GET['reset'])) $db->resetDatabase(); //TODO make this more production oriented
     if (isset($_POST['category'])){
-        $question = $db->getQuestion($_POST['category']);
+        $question = $db->getQuestion($_POST['category'],$_POST['type']);
         echo "<question>";
         echo $question['Question'];
         echo "</question>";

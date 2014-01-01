@@ -40,8 +40,8 @@
             return $data[0]['value'];
         }
 
-        public function getQuestion($category) {
-            $result = mysqli_query($this->conn,"SELECT * FROM questions WHERE Category = '$category' LIMIT 1");
+        public function getQuestion($category, $type) {
+            $result = mysqli_query($this->conn,"SELECT * FROM questions WHERE Category = '$category' AND Type IN ($type) LIMIT 1");
             $data = mysqli_fetch_all($result,MYSQLI_ASSOC) or die(mysql_error($result));
             if (count($data) == 0) return null;
             return $data[0];
